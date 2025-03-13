@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let yesSize = 1 + clickCount * 1.2;
         elements.yesButton.style.transform = `scale(${yesSize})`;
     // 挤压 No 按钮，每次右移 50px | Squeeze the No button and move it 50px to the right each time
-    let noOffset = clickCount * 100;
+    let noOffset = clickCount * 130;
         elements.noButton.style.transform = `translateX(${noOffset}px)`;
     // 让图片和文字往上移动 | Move the image and text up
     let moveUp = clickCount * 25;
@@ -238,18 +238,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 // 确保用户名安全地插入 | Ensure the username is inserted safely
         document.body.innerHTML = `
             <div class="yes-screen">
-                <h1 class="yes-text"></h1>
-                <img src="assets/images/hug.png" alt="Hug" class="yes-image">
-                <a href="https://ac.nowcoder.com/" class="niuke"></a>
-                <a href="https://codeforces.com/" class="codeforces"></a>
-                <a href="https://www.luogu.com.cn/" class="luogu"></a>
+                <h1  class="yes-text"></h1>
+                <img  src="assets/images/hug.png" alt="Hug" class="yes-image" >
+                <p class="a-text">神奇的deepseek
+                <a href="https://www.deepseek.com/" target="_blank" class="a-text" >deepseek</a>
+                </p>
+                <p class="a-text">有意思的视频ai生成网站
+                <a href="https://jimeng.jianying.com/ai-tool/home" target="_blank" class="a-text">即梦AI</a>
+                </p>
+                <p class="a-text">好玩的，有意思的编程网站
+                <a href="https://scratch.focalhot.com/" target="_blank">scratch</a>
             </div>
         `;
         // 确保用户名安全地插入
         document.querySelector(".yes-text").innerText = loveTest(username);
-        document.querySelector(".niuke").innerText = "牛客";
-        document.querySelector(".codeforces").innerText = "codefroces";
-        document.querySelector(".luogu").innerText = "洛谷";
+        // document.querySelector(".niuke").innerText = "牛客";
+        // document.querySelector(".codeforces").innerText = "codefroces";
+        // document.querySelector(".a-text").innerText = "洛谷";
         // 禁止滚动，保持页面美观 | Disable scrolling to keep the page beautiful
         document.body.style.overflow = "hidden";
         // 给表白成功页面添加慢慢浮现动画类名 | Add a fade-in animation class name to the successful confession page
